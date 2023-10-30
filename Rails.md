@@ -7,3 +7,7 @@ sprockets-railsというgemにて提供されるSprocketsの機能で、デフ�
 appディレクトトリ：Model、View、Controller、helperファイル、Assetファイル
 onfigディレクトリ：ルーティング、各種設定ファイル、master.key
 dbディレクトリ：データベースのスキーマファイル、マイグレーションファイル
+
+## layoutファイル
+Webページを表示する際に必要な情報（html head bodyタグなど）を記載するファイル。Viewページを作成する際に最初に読み込まれる。
+デフォルトではapplication.html.erbが読み込まれ、タグやタグの中で <%= yield %> を記載して個別のテンプレートファイルのHTMLを表示する。
