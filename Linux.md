@@ -12,6 +12,13 @@ OSの一種。UNIXを元に作られ、オープンソースのソフトウェ�
 
 ## シェル
 
+## Linuxの環境
+- AWS Cloud9 で Linux 環境を構築する
+- AWS で EC2 を立て、SSH で接続する
+- ローカル PC 上に Docker や VirtualBox 等で Linux の環境を用意する
+- パソコンに本体の OS とは別に Linux 環境を構築する。Windows なら WSL2、Mac ならデュアルブートや UTM を使用する
+- パソコンに Linux をインストールする
+
 ## コマンド
 現在のディレクトリ表示
 
