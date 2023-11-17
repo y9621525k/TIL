@@ -219,16 +219,50 @@ ls / | grep '^l' #ルートディレクトリを ls コマンドで参照した�
 ### 「Hello World」と出力する
 `
 #!/bin/bash
-STR="Hello World"
+STR="Hello World"　　
 echo $STR
 `
 
 ### 標準入力から値を受け取る
-- 「read」は標準入力から受け取った内容を1行単位で変数に入れるコマンド
+- 「read」は標準入力から受け取った内容を1行単位で変数に入れるコマンド　　
+`
+#!/bin/bash　　
+read name　　
+echo "Welcome $name"　　　　
+`
+
+### 条件分岐
 `
 #!/bin/bash
-read name
-echo "Welcome $name"
+echo "Enter two numbers:"
+read num1
+read num2
+
+echo "Choose an arithmetic operation (+, -, *, /):"
+read operator
+
+case $operator in
+    +)
+        result=$((num1 + num2))
+        ;;
+    -)
+        result=$((num1 - num2))
+        ;;
+    \*)
+        result=$((num1 * num2))
+        ;;
+    /)
+        if [ "$num2" -eq 0 ]; then
+            echo "Error: Cannot divide by zero."
+            exit 1
+        fi
+        result=$(awk "BEGIN {printf \"%.2f\", $num1 / $num2}")
+        ;;
+    *)
+        echo "Invalid operator"
+        exit 1
+        ;;
+esac
+
+echo "The result: $result"
 `
-
-
