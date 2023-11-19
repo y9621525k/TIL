@@ -217,52 +217,74 @@ ls / | grep '^l' #ルートディレクトリを ls コマンドで参照した�
 - 変数は"変数名=値"の形で記載し、"$=変数名"で呼び出す
 - 実行権限を付与して"bash ./script.sh"で実行する　　
 ### 「Hello World」と出力する
-`
-#!/bin/bash
+```
+#!/bin/bash　　
 STR="Hello World"　　
-echo $STR
-`
+echo $STR　　
+```
 
 ### 標準入力から値を受け取る
 - 「read」は標準入力から受け取った内容を1行単位で変数に入れるコマンド　　
-`
+```
 #!/bin/bash　　
 read name　　
-echo "Welcome $name"　　　　
-`
+echo "Welcome $name"
+```
 
 ### 条件分岐
-`
+```
 #!/bin/bash
-echo "Enter two numbers:"
-read num1
+
+echo "Enter two numbers:"　　
+read num1　　
 read num2
 
-echo "Choose an arithmetic operation (+, -, *, /):"
-read operator
-
-case $operator in
-    +)
-        result=$((num1 + num2))
-        ;;
-    -)
-        result=$((num1 - num2))
-        ;;
-    \*)
-        result=$((num1 * num2))
-        ;;
-    /)
-        if [ "$num2" -eq 0 ]; then
-            echo "Error: Cannot divide by zero."
-            exit 1
-        fi
-        result=$(awk "BEGIN {printf \"%.2f\", $num1 / $num2}")
-        ;;
-    *)
-        echo "Invalid operator"
-        exit 1
-        ;;
+echo "Choose an arithmetic operation (+, -, *, /):"　　
+read operator　　
+case $operator in　　
+    +)　　
+        result=$((num1 + num2))　　
+        ;;　　
+    -)　　
+        result=$((num1 - num2))　　
+        ;;　　
+    \*)　　
+        result=$((num1 * num2))　　
+        ;;　　
+    /)　　
+        if [ "$num2" -eq 0 ]; then　　
+            echo "Error: Cannot divide by zero."　　
+            exit 1　　
+        fi　　
+        result=$(awk "BEGIN {printf \"%.2f\", $num1 / $num2}")　　
+        ;;　　
+    *)　　
+        echo "Invalid operator"　　
+        exit 1　　
+        ;;　　
 esac
 
-echo "The result: $result"
-`
+echo "The result: $result"　　
+```
+
+### 繰り返し処理
+for文　　
+```
+#!/bin/bash
+for ((i = 1; i <= 100; i++)); do　　
+  if ((i % 2 == 0)); then　　
+    echo $i　　
+  fi　　
+done　　
+```
+while文　　
+```
+#!/bin/bash　　
+num=1　　
+while [ $num -le 100 ]; do　　
+    if [ $((num % 2)) -eq 0 ]; then　　
+        echo $num　　
+    fi　　
+    num=$((num + 1))　　
+done　　
+```
