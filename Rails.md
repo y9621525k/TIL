@@ -48,3 +48,10 @@ saveとsave!メソッドの挙動の違い
 - メソッドの返り値が自分の意図したものか
 - 意図した箇所が動いているか
 - binding.pryではshow-sourceでメソッドの定義元のコードを確認できる
+
+## Railsにおける多言語化対応
+i18nとは
+- Railsのアプリケーション内で複数の言語を併用する仕組み
+- config/locales下にymlファイルを作成する（英語であればen.yml、日本語であればja.yml)
+- userクラスにlocaleという属性を設定し、例えばbeforeアクションでcurrent_userのlocaleを確認するメソッドを定義すればユーザーごとに言語を切り替えられる
+- i18nはinternationalizationの略称
