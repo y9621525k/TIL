@@ -75,3 +75,7 @@ user = User.first
 # userオブジェクトが board_id という外部キーを持っているので、その外部キーを使って、userオブジェクトが作成したboardオブジェクト（Boardモデルのidを参照する）を取得できる。
 user.boards
 ```
+
+## dependent: :destroy
+- モデル間のリレーションが設定されている場合、この設定をした親モデルが削除されると、関連する子モデルも同時に削除され、参照先が存在しないというバグを防ぐ。
+- UserとBoardモデルがあるとした場合、1人のユーザーは複数の掲示板を投稿できるので、Userモデルにhas_many boards, dependent: :destroyと記載する。そうすると、Userが削除されるとそのユーザーが作成したBoardも消える。
