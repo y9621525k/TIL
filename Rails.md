@@ -138,3 +138,13 @@ user.boards
 モデルでscopeを設定するメリット
 - 頻繁に使用されるクエリに名前をつけて設定しておくことができ、コードが短く、かつ直感的に理解しやすくなる。
 - 複雑な検索メソッドや長いメソッドチェーンなど読みにくいものにラベルを付けることで可読性が上がり再利用しやすくなる。
+
+## resoursesのネスト
+- ネストは、モデル間で関連付けが設定されており、親子両方の情報をURLに含めたい場合に使用する。
+```
+routes.rb
+resources :boards do
+  resources :comments
+end
+# => /boards/:board_id/comments/:comment_id といったURLが得られる
+```
