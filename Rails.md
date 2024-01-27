@@ -148,3 +148,7 @@ resources :boards do
 end
 # => /boards/:board_id/comments/:comment_id といったURLが得られる
 ```
+
+## application.html.erbのyield
+application.html.erbのyieldとテンプレートファイルについて
+- テンプレートファイルからレンダリングしたものがyieldと書いた箇所に挿入されるイメージ
