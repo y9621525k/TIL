@@ -149,6 +149,15 @@ end
 # => /boards/:board_id/comments/:comment_id といったURLが得られる
 ```
 
+## 他人の掲示板を編集・削除しようとした際の制御
+- BoardsControllerのedit update destroyアクションで Board.findを使ってリソースを取得した場合、他のユーザーの掲示板も含めたBoard全体からfindしているので、他人の掲示板の編集ページを表示したり、更新・削除できる可能性がある（URL直打ちやcurl -XPOSTなどのターミナル操作）
+- 望ましい記載としては、Boardからでは無くcurrent_user.boardsからfindさせれば良い。
+```
+def edit
+  @board = current_user.boards.find(params[:id])
+end
+```
+
 ## application.html.erbのyield
 application.html.erbのyieldとテンプレートファイルについて
 - テンプレートファイルからレンダリングしたものがyieldと書いた箇所に挿入されるイメージ
