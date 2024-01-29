@@ -161,3 +161,8 @@ end
 ## application.html.erbのyield
 application.html.erbのyieldとテンプレートファイルについて
 - テンプレートファイルからレンダリングしたものがyieldと書いた箇所に挿入されるイメージ
+
+## collectionルーティング
+memberとcollectionルーティングの使い分け
+- resourcesで自動生成される7つのアクションの他に、新たに独自のアクションを追加する場合は合わせてルーティングも設定する必要がある。
+- その際リソースのIDが不要なアクション（インスタンスの検索など）はcollectionを、必要なアクション（あるインスタンスのプレビュー表示など）ならばmemberを使用する。
