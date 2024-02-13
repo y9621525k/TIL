@@ -10,4 +10,11 @@ special_price = 200
 name = 'Alice'
 puts "Hello, #{name}!" #=> Hello, Alice!
 ```
+```
+# nを1増やす(n = n + 1と同じ)
+n += 1 #=>2
 
+# 文字列は数値に変換する必要がある
+# 整数に変換
+1 + '10'.to_i #=> 11
+```
