@@ -73,3 +73,27 @@ Date.today
 - ppメソッドは大きくて複雑な配列やハッシュ、オブジェクトの内容を見やすく整形して出力する
 - putsメソッド、printメソッドは内部的にto_sメソッドを呼び出して変換されている
 - pメソッドはinspectメソッドを呼び出している
+
+## 第3章
+- テストを自動化するためにテスト用のフレームワークを用いる(Minitest)
+```
+# テストコートの雛形
+require 'minitest/autorun'
+
+class SampleTest < Minitest:Test
+  def test_sample
+    assert_equal 'RUBY', 'ruby'.upcase
+  end
+end
+```
+- テストメソッドはメソッド名をtest_で始める
+```
+# aとbが等しければパスする
+assert_equal b, a
+
+# aが真であればパスする
+assert a
+
+# aが偽であればパスする
+refute a
+```
