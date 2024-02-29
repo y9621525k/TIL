@@ -171,3 +171,8 @@ a #=> [1, 2, 3]
 # %wで文字列の配列を作成(丸括弧で囲む場合)
 %w(apple melon orange) #=> ["apple", "melon", "orange"]
 ```
+```
+# 以下のコードはa = []と同じ
+a = Array.new
+```
+
