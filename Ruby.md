@@ -100,6 +100,7 @@ refute a
 - テストコードは別ファイルに分け、```require_relative```でテストを行うファイルを参照する。
 
 ## 第4章
+- 配列とは複数のデータを格納できるオブジェクトのこと
 - <<を使うと配列の最後に要素を追加することができる
 ```
 a = []
@@ -108,6 +109,7 @@ a << 2
 a << 3
 a #=> [1, 2, 3]
 ```
+- ブロックとはメソッドの引数として渡すことができる処理のかたまり
 ```
 # プロック処理
 numbers = [1, 2, 3, 4]
@@ -174,5 +176,19 @@ a #=> [1, 2, 3]
 ```
 # 以下のコードはa = []と同じ
 a = Array.new
+```
+- 繰り返し処理で使うbreakは「繰り返し処理からの脱出」、returnは「メソッドからの脱出」の違いがある
+```
+def calc_with_return
+  numbers = [1, 2, 3, 4, 5, 6]
+  target = nil
+  numbers.shuffle.each do |n|
+    target = n
+    return if n.even?
+  end
+  target * 10
+end
+calc_with_return #=> nil
+# returnには引数を渡していないので、結果としてメソッドの戻り値はnilになる
 ```
 
