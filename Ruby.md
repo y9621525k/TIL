@@ -210,4 +210,8 @@ calc_with_return #=> nil
 :シンボル名
 ```
 - メソッドの引数にキーワード引数を用いると可読性が上がる。
-
+```
+# "シンボル: 値"という記法でハッシュを作成できる
+currencies = { japan: 'yen', us: 'doller', india: 'rupee' }
+currencies[:us] #=> "doller"
+```
