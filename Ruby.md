@@ -209,7 +209,13 @@ calc_with_return #=> nil
 ```
 :シンボル名
 ```
-- メソッドの引数にキーワード引数を用いると可読性が上がる。
+- メソッドの引数を指定する「キーワード引数」という機能がある
+- メソッドの引数にキーワード引数を用いると可読性が上がる
+```
+def buy_burger(menu, drinK: true, potato: true)
+  #省略
+end
+```
 ```
 # "シンボル: 値"という記法でハッシュを作成できる
 currencies = { japan: 'yen', us: 'doller', india: 'rupee' }
