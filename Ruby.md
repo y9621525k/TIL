@@ -221,3 +221,18 @@ end
 currencies = { japan: 'yen', us: 'doller', india: 'rupee' }
 currencies[:us] #=> "doller"
 ```
+- keysメソッドはハッシュのキーを配列として返す
+```
+currencies = { japan: 'yen', us: 'doller', india: 'rupee' }
+currencies.keys #=> [:japan, :us, :india]
+```
+- valuesメソッドはハッシュの値を配列として返す
+```
+currencies.values #=> ["yen", "doller", "rupee"]
+```
+- has_key?メソッドはハッシュの中に指定されたキーが存在するかどうか確認するメソッド
+- key?/include?/member?はいずれもhas_key?のエイリアスメソッド
+```
+currencies.has_key?(:japan) #=> true
+currencies.has_key?(:italy) #=> false
+```
