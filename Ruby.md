@@ -236,3 +236,11 @@ currencies.values #=> ["yen", "doller", "rupee"]
 currencies.has_key?(:japan) #=> true
 currencies.has_key?(:italy) #=> false
 ```
+
+## 6章
+- 正規表現:パターンを指定して、文字列を効率よく検索/置換するためのミニ言語
+- \d:半角数字1文字を表す
+- {n,m}:　直前の文字がn文字以上、m文字以下,{n}:直前の文字がちょうどn文字
+- ?:直前の文字が1または無し
+- .:任意の1文字
+- +:直前の文字が1文字以上
