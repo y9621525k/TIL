@@ -236,6 +236,10 @@ currencies.values #=> ["yen", "doller", "rupee"]
 currencies.has_key?(:japan) #=> true
 currencies.has_key?(:italy) #=> false
 ```
+- メソッドの第一引数にハッシュを渡そうとする場合は必ず()をつける
+```
+buy_burger({'drink' => true, 'potato' => false}, 'fish')
+```
 
 ## 6章
 - 正規表現:パターンを指定して、文字列を効率よく検索/置換するためのミニ言語
