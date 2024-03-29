@@ -56,3 +56,8 @@ mysql> delete from user where id = 3;
 #rails version
 user.destroy # userはidが3のユーザーである前提
 ```
+
+1.filmsテーブルからtitleの一覧を取得する
+```
+SELECT title form films;
+```
